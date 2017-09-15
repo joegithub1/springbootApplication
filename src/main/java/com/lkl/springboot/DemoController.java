@@ -11,6 +11,6 @@ public class DemoController {
 	public String sayHello(@PathVariable("name") String name){
 		System.out.println("method:sayHello()");
 		
-		return "Hello :"+name;
+		return "Hello: "+name;
 	}
 }
