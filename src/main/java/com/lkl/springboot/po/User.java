@@ -16,7 +16,7 @@ public class User {
 	private @Value("${remark}") String remark;
 	private String address;
 	private Address detailAddress;//详细地址
-	private List<Address> allAddresss = new ArrayList<>();
+	private List<Address> allAddresss = new ArrayList<Address>();
 	
 	
 	public String getName() {
