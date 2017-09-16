@@ -26,7 +26,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        
+        <!-- spring-boot-starter-thymeleaf 与  slf4j-api 依赖-->
         <dependency>
         	<groupId>org.springframework.boot</groupId>
         	<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -38,8 +38,17 @@
 		    <artifactId>slf4j-api</artifactId>
 		    <version>1.7.25</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
-        
-        
+		<!-- 连接数据库需要引入jdbc支持 -->
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <!-- 先引入MySQL连接的依赖包 -->
+        <dependency>
+        	<groupId>mysql</groupId>
+        	<artifactId>mysql-connector-java</artifactId>
+        	<version>5.1.21</version>
+        </dependency>
   </dependencies>
    <build>
    	<resources>

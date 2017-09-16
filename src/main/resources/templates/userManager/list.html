@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8"/>
+<title>用户列表</title>
+</head>
+<body>
+<div><p>共用户：</p> <p th:text="${userCount}"></p> 人</div>
+<table style="border:1px solid">
+	<thead>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>
+			<a href="/u/add">增加</a>
+			</td>
+		</tr>
+		<tr>
+		 <td>ID</td>
+		 <td>用户名</td>
+		 <td>密码</td>
+		 <td>email</td>
+		 <td>昵称</td>
+		 <td>创建日期</td>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr th:each="u:${users}">
+			<td th:text="${u.userId}">userId</td>
+			<td th:text="${u.userName}"></td>
+			<td th:text="${u.passWord}"></td>
+			<td th:text="${u.email}"></td>
+			<td th:text="${u.nickName}"></td>
+			<td th:text="${u.regTime}"></td>
+			<td>
+				<!-- <a th:href="@{/u/del/(${u.userId})}" >删除</a> -->
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

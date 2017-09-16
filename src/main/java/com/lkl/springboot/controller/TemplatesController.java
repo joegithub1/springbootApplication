@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lkl.springboot.po.Address;
+
 @Controller
 @RequestMapping("/html")
 public class TemplatesController {
@@ -19,6 +21,12 @@ public class TemplatesController {
 		model.addAttribute("host", "www.myjian.win");
 		return "index";
 	}
+	@RequestMapping("/add")
+	public String add(){
+		
+		return "add";
+	}
+	
 	@RequestMapping("/herror")
 	public String error() throws Exception{
 		throw new Exception("发生错误");
