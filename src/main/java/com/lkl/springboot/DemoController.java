@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 
-	@RequestMapping("/{name}")
+	@RequestMapping("/username/{name}")
 	public String sayHello(@PathVariable("name") String name){
 		System.out.println("method:sayHello()");
 		
