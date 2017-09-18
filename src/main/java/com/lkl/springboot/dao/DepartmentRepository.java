@@ -1,10 +1,13 @@
 package com.lkl.springboot.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.lkl.springboot.po.Department;
 
@@ -23,6 +26,8 @@ public interface DepartmentRepository extends JpaRepository<Department, Long>{
 	Department findByDepaNameAndDepaNo(String depaName,Integer depaNo);
 	
 	Department getByDepaId(Integer depaId);
+	
+	//List<Department> findOrderByDepaId();
 	/**
 	* Title: DepartmentRepository.java
 	* Description: 修改信息
@@ -37,8 +42,10 @@ public interface DepartmentRepository extends JpaRepository<Department, Long>{
 	@Modifying(clearAutomatically=true)
 	@Query(value="update t_department d set d.depa_name=?,d.depa_no=? where d.depa_id=?",nativeQuery=true)
 	int updateByDepaId(String depaName,Integer depaNo,Integer depaId);
-	/*@Query("from Department d where d.depaName:depaName")
+	
+	
+	@Query(value = "select * from t_department d where d.depa_name=:depaName",nativeQuery=true)
 	Department findDepa(@Param("depaName") String depaName);
-	*/
+	
 	
 }
