@@ -44,8 +44,8 @@ public interface DepartmentRepository extends JpaRepository<Department, Long>{
 	int updateByDepaId(String depaName,Integer depaNo,Integer depaId);
 	
 	
-	@Query(value = "select * from t_department d where d.depa_name=:depaName",nativeQuery=true)
+	/*@Query(value = "select * from t_department d where d.depa_name=:depaName",nativeQuery=true)
 	Department findDepa(@Param("depaName") String depaName);
-	
+	*/
 	
 }

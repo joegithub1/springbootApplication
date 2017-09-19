@@ -1,6 +1,7 @@
 package com.lkl.springboot.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.criterion.Example;
@@ -45,7 +46,7 @@ public class ApplicationTestsController {
 	* @author HuangJian
 	* @date 2017年9月16日
 	*/
-	@Test
+	//@Test
 	public void test(){
 		List<Department> data = new ArrayList<Department>();
 		data.add(new Department("财务部update",1007));
@@ -98,14 +99,20 @@ public class ApplicationTestsController {
 	* @author HuangJian
 	* @date 2017年9月18日
 	*/
-	//@Test
+	@Test
 	public void findPage(){
 		List<Department> list = null;
+		Department department= null;
 		Page<Department> listPage = null;
 		Pageable pageable = new PageRequest(0, 3);
 		listPage = departmentRepository.findAll(pageable);
-		
+		Iterator<Department> iterator =  listPage.iterator();
+		while(iterator.hasNext()){
+			Department d = iterator.next();
+			System.out.println(d.toString());
+		}
 		System.out.println(listPage.getSize());
-		
+		department = departmentRepository.save(new Department(4,"安全部update", 1002));//updateByDepaId();
+		System.out.println("修改结果为："+department.toString());
 	}
 }

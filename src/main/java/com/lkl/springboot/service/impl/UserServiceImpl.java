@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import com.lkl.springboot.service.UserService;
 public class UserServiceImpl implements UserService{
 
 	@Autowired
+	@Qualifier("defaultJdbcTemplate")
 	private JdbcTemplate jdbcTemplate;
 	@Override
 	public Integer create(Tuser user) {

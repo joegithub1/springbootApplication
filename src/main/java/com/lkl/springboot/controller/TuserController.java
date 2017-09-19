@@ -37,6 +37,7 @@ public class TuserController {
 	}
 	@RequestMapping("/list")
 	public String list(Model model){
+		System.out.println("11");
 		Integer userCount = userService.getAllCount();
 		List<Tuser> users =  userService.findUser();
 		model.addAttribute("users", users);
