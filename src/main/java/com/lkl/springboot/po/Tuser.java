@@ -8,6 +8,10 @@ import org.springframework.jdbc.core.RowMapper;
 
 public class Tuser implements RowMapper<Tuser>,Serializable{
 
+	/** 
+	* @Fields serialVersionUID :
+	*/ 
+	private static final long serialVersionUID = 1L;
 	private Integer userId;
 	private String userName;
 	private String passWord;
