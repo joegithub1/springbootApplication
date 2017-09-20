@@ -14,7 +14,7 @@ public class DepartmentServiceImpl implements DepartmentService{
 	private DepartmentRepository departmentRepository;
 	
 	@Override
-	public Integer saveDepa(Department department) {
+	public Long saveDepa(Department department) {
 		department = departmentRepository.save(department);
 		return department.getDepaId();
 	}

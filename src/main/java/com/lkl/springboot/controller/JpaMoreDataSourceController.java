@@ -44,15 +44,22 @@ public class JpaMoreDataSourceController {
 		List<Teacher> teachers = new ArrayList<Teacher>();
 		teachers.add(new Teacher(null,"zhangsan",18));
 		teachers.add(new Teacher(null,"lisi",28));
-		teacherRepository.save(teachers);
+		//teacherRepository.save(teachers);
 		System.out.println("教师总数："+teacherRepository.findAll().size());
+		Teacher t = teacherRepository.findOne(10L);
+		if(null != t){
+			System.out.println("findOne:"+t.toString());
+		}
 		
 		List<Message> messages = new ArrayList<Message>();
 		messages.add(new Message(null,"新闻1","中国新闻1"));
 		messages.add(new Message(null,"新闻2","中国新闻2"));
 		messages.add(new Message(null,"新闻3","中国新闻3"));
-		messageRepository.save(messages);
+		//messageRepository.save(messages);
 		System.out.println("信息总数："+messageRepository.findAll().size());
+		//报错需要懒加载
+		//Message m  = messageRepository.getOne(1L);
+		//System.out.println("getOne:"+m.toString());
 		
 	}
 }

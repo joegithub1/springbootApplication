@@ -80,7 +80,7 @@ public class ApplicationTestsController {
 		List<Department> list = departmentRepository.findAll(new Sort(Sort.Direction.DESC, "depaId"));
 		System.out.println(list.toString());
 		
-		department =  departmentRepository.save(new Department(2,"业务部save",1001));
+		department =  departmentRepository.save(new Department(2L,"业务部save",1001));
 		System.out.println("更新成功:");
 		System.out.println(department.toString());
 		
@@ -112,7 +112,7 @@ public class ApplicationTestsController {
 			System.out.println(d.toString());
 		}
 		System.out.println(listPage.getSize());
-		department = departmentRepository.save(new Department(4,"安全部update", 1002));//updateByDepaId();
+		department = departmentRepository.save(new Department(4L,"安全部update", 1002));//updateByDepaId();
 		System.out.println("修改结果为："+department.toString());
 	}
 }

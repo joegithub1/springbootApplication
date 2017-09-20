@@ -14,7 +14,7 @@ public class Teacher {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="t_id",length=8)
-	private Integer id;
+	private Long id;
 	@Column(name="t_name",length=50,nullable=false)
 	private String name;
 	@Column(name="t_age",length=8,nullable=false)
@@ -22,16 +22,16 @@ public class Teacher {
 	public Teacher() {
 		// TODO Auto-generated constructor stub
 	}
-	public Teacher(Integer id, String name, int age) {
+	public Teacher(Long id, String name, int age) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
 	}
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -45,6 +45,10 @@ public class Teacher {
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return "Teacher [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
 	
 }

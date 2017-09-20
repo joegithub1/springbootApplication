@@ -4,7 +4,7 @@ import com.lkl.springboot.po.Department;
 
 public interface DepartmentService {
 
-	public Integer saveDepa(Department department); 
+	public Long saveDepa(Department department); 
 	
 	
 }

@@ -36,9 +36,9 @@ public class Department implements Serializable{
 	*/ 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name="depa_id",length=8,columnDefinition="int(8) comment '部门ID 主键'")
+	@Column(name="depa_id",length=11,columnDefinition="int(8) comment '部门ID 主键'")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer depaId;
+	private Long depaId;
 	//部门名称
 	@Column(name="depa_name",nullable=false,length=50,columnDefinition="varchar(50) comment '部门名称'")
 	private String depaName;
@@ -57,7 +57,7 @@ public class Department implements Serializable{
 	
 	
 	
-	public Department(Integer depaId, String depaName, Integer depaNo, Integer status) {
+	public Department(Long depaId, String depaName, Integer depaNo, Integer status) {
 		super();
 		this.depaId = depaId;
 		this.depaName = depaName;
@@ -65,7 +65,7 @@ public class Department implements Serializable{
 		this.status = status;
 	}
 	
-	public Department(Integer depaId, String depaName, Integer depaNo) {
+	public Department(Long depaId, String depaName, Integer depaNo) {
 		super();
 		this.depaId = depaId;
 		this.depaName = depaName;
@@ -78,12 +78,31 @@ public class Department implements Serializable{
 		this.depaNo = depaNo;
 	}
 
-	public Integer getDepaId() {
+	
+	public Integer getIsDel() {
+		return isDel;
+	}
+
+
+
+	public void setIsDel(Integer isDel) {
+		this.isDel = isDel;
+	}
+
+
+
+	public Long getDepaId() {
 		return depaId;
 	}
-	public void setDepaId(Integer depaId) {
+
+
+
+	public void setDepaId(Long depaId) {
 		this.depaId = depaId;
 	}
+
+
+
 	public String getDepaName() {
 		return depaName;
 	}
